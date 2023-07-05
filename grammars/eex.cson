@@ -31,5 +31,76 @@
       }
     ]
   }
+  {
+    'name': 'meta.tag.other.unrecognized.html.derivative',
+    'begin': '(</?)([A-Z|\\.][^\\s>]*)(?<!/)',
+    'beginCaptures': {
+      '1': {
+        'name': 'punctuation.definition.tag.begin.html'
+      },
+      '2': {
+        'name': 'entity.name.type.module.elixir'
+      }
+    },
+    'end': '((?: ?/)?>)',
+    'endCaptures': {
+      '1': {
+        'name': 'punctuation.definition.tag.end.html'
+      }
+    },
+    'patterns': [
+      {
+        "begin": "([^\\x{0020}\"'<>/=\\x{0000}-\\x{001F}\\x{007F}-\\x{009F}\\x{FDD0}-\\x{FDEF}\\x{FFFE}\\x{FFFF}\\x{1FFFE}\\x{1FFFF}\\x{2FFFE}\\x{2FFFF}\\x{3FFFE}\\x{3FFFF}\\x{4FFFE}\\x{4FFFF}\\x{5FFFE}\\x{5FFFF}\\x{6FFFE}\\x{6FFFF}\\x{7FFFE}\\x{7FFFF}\\x{8FFFE}\\x{8FFFF}\\x{9FFFE}\\x{9FFFF}\\x{AFFFE}\\x{AFFFF}\\x{BFFFE}\\x{BFFFF}\\x{CFFFE}\\x{CFFFF}\\x{DFFFE}\\x{DFFFF}\\x{EFFFE}\\x{EFFFF}\\x{FFFFE}\\x{FFFFF}\\x{10FFFE}\\x{10FFFF}]+)",
+        "beginCaptures": {
+          "0": {
+            "name": "entity.other.attribute-name.html"
+          }
+        },
+        "comment": "Anything else that is valid",
+        "end": "(?=\\s*+[^=\\s])",
+        "name": "meta.attribute.unrecognized.$1.html",
+        "patterns": [
+          {
+             "begin":"=",
+             "beginCaptures":{
+                "0":{
+                   "name":"punctuation.separator.key-value.html"
+                }
+             },
+             "end":"(?<=[^\\s=])(?!\\s*=)|(?=/?>)",
+             "patterns":[
+                {
+                   "include":"#interpolation"
+                },
+                {
+                   "match":"([^\\s\"'=<>`/]|/(?!>))+",
+                   "name":"string.unquoted.html"
+                },
+                {
+                   "begin":"\"",
+                   "beginCaptures":{
+                      "0":{
+                         "name":"punctuation.definition.string.begin.html"
+                      }
+                   },
+                   "end":"\"",
+                   "endCaptures":{
+                      "0":{
+                         "name":"punctuation.definition.string.end.html"
+                      }
+                   },
+                   "name":"string.quoted.double.html",
+                   "patterns":[
+                      {
+                         "include":"#entities"
+                      }
+                   ]
+                }
+             ]
+          }
+        ]
+      }
+    ]
+  }
 ]
 'scopeName': 'text.elixir'

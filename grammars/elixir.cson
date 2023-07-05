@@ -1222,7 +1222,116 @@
     ]
   }
 
+  # HEEX String sigils
+
+  {
+    "begin": "\\s?(~H\"\"\")$",
+    "beginCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "comment": "HEEx sigil with heredoc (double quotes)",
+    "end": "^\\s*(\"\"\"[a-z]*)$",
+    "endCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "name": "text.html.heex",
+    "patterns": [
+      {
+        "include": "text.html.elixir"
+      }
+    ]
+  }
+  {
+    "begin": "~H\\\"",
+    "beginCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "comment": "HEEx sigil with double quotes",
+    "end": "\\\"[a-z]*",
+    "endCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "name": "text.html.heex",
+    "patterns": [
+      {
+        "include": "text.html.elixir"
+      }
+    ]
+  }
+  {
+    "begin": "~H\\[",
+    "beginCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "comment": "HEEx sigil with square brackets",
+    "end": "\\][a-z]*",
+    "endCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "name": "text.html.heex",
+    "patterns": [
+      {
+        "include": "text.html.elixir"
+      }
+    ]
+  }
+  {
+    "begin": "~H\\(",
+    "beginCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "comment": "HEEx sigil with parentheses",
+    "end": "\\)[a-z]*",
+    "endCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "name": "text.html.heex",
+    "patterns": [
+      {
+        "include": "text.html.elixir"
+      }
+    ]
+  }
+  {
+    "begin": "~H\\{",
+    "beginCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "comment": "HEEx sigil with curly brackets",
+    "end": "\\}[a-z]*",
+    "endCaptures": {
+      "0": {
+        "name": "string.quoted.double.heredoc.elixir"
+      }
+    },
+    "name": "text.html.heex",
+    "patterns": [
+      {
+        "include": "text.html.elixir"
+      }
+    ]
+  }
+
   # Literal String sigils
+
   {
     'begin': '~[A-Z](?>""")'
     'beginCaptures':
