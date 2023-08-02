@@ -1,10 +1,10 @@
 {
-  "description": "Elixir language support for Atom.",
+  "description": "Elixir language support for Pulsar.",
   "engines": {
     "atom": ">= 0.189.0"
   },
   "license": "Apache 2.0",
-  "name": "language-elixir",
-  "repository": "https://github.com/elixir-lang/language-elixir",
+  "name": "language-elixir-pulsar",
+  "repository": "https://github.com/benonymus/language-elixir-pulsar",
   "version": "0.25.2"
 }
